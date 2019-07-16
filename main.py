@@ -2,7 +2,7 @@ class Fila(object):
     """Clase base de fila"""
 
     def __init__(self):
-         """constructor de la clase Fila """
+        """constructor de la clase Fila """
         self.enfila= 0
         self.fila = []
 
@@ -38,16 +38,18 @@ class FilaGeneral(Fila):
     
 
 class cliente(object):
-     """clase cliente """
+    """clase cliente """
     def __init__(self,dni):
-         """ constructor de la clase cliente """
+        """ constructor de la clase cliente """
         self.dni=dni
         self.categoria=None
     def modificarcategoria(self, categoria):
         """modifica el atributo categoria del cliente """
-        pass
+        self.categoria = categoria
   
     
 if __name__ == "__main__":
     """ simular una fila en una entidad bancaria"""
-    pass
+    x = list(range (0 ,1000, 1))
+
+
