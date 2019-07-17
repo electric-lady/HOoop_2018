@@ -13,26 +13,27 @@ class FilaPreferencial(Fila):
         """Inserta un nuevo cliente en la fila preferencial"""
         pass
 
+
     def atender(self):
         """Atiende al proximo cliente prederencial"""
-        self.enfila-=1
-        self.fila.pop(0)
+        self.enfila-=1  #siempre que atienden al cliente disminuye en 1 el tamaño de la fila
+        self.fila.pop(0) #saca el pimer elemento de la fila
     
     def abrircajanueva(self,maxenfila,filanueva):
         """Si maxenfila es menor que la cantidad de clientes actualmente en espera, abro nueva caja"""
         pass
-    
-    
     
 class FilaGeneral(Fila):
     """Clase que mantiene una fila de clientes no preferenciales"""
 
     def insertar(self, cliente):
         """Inserta un nuevo cliente en la fila no preferencial"""
-        pass
+        self.enfila+=1  #siempre que llega un cliente aumenta en 1 el tamaño de la fila
+        self.fila.append(cliente)
+
 
     def atender(self):
-        """Atiende al proximo cliente prederencial"""
+        """Atiende al proximo cliente preferencial"""
         pass      
 
     
@@ -43,6 +44,7 @@ class cliente(object):
         """ constructor de la clase cliente """
         self.dni=dni
         self.categoria=None
+
     def modificarcategoria(self, categoria):
         """modifica el atributo categoria del cliente """
         self.categoria = categoria
