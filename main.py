@@ -11,7 +11,8 @@ class FilaPreferencial(Fila):
 
     def insertar(self, cliente):
         """Inserta un nuevo cliente en la fila preferencial"""
-        pass
+        self.enfila+=1
+        self.fila.append(cliente)
 
 
     def atender(self):
@@ -25,7 +26,7 @@ class FilaPreferencial(Fila):
     
 class FilaGeneral(Fila):
     """Clase que mantiene una fila de clientes no preferenciales"""
-
+ 
     def insertar(self, cliente):
         """Inserta un nuevo cliente en la fila no preferencial"""
         self.enfila+=1  #siempre que llega un cliente aumenta en 1 el tamaño de la fila
@@ -34,10 +35,10 @@ class FilaGeneral(Fila):
 
     def atender(self):
         """Atiende al proximo cliente preferencial"""
-        pass      
+        self.enfila-=1
+        self.fila.pop(0)    
 
     
-
 class cliente(object):
     """clase cliente """
     def __init__(self,dni):
