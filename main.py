@@ -34,10 +34,10 @@ class FilaPreferencial(Fila):
         self.filanueva = [] esta lìnea no va porque filanueva es una Fila
          y ya heredó"""
         if((self.enfila % 2 ) == 0):
-            filanueva = self.fila[int(0.5*self.enfila): self.enfila+1]
+            self.filanueva = self.fila[int(0.5*self.enfila): self.enfila+1]
             self.fila = self.fila[0:int(0.5* self.enfila) + 1]
         else:
-            filanueva = self.fila[int(0.5 * (self.enfila + 1)): self.enfila + 1 ]
+            self.filanueva = self.fila[int(0.5 * (self.enfila + 1)): self.enfila + 1 ]
             self.fila = self.fila[0:int(0.5 * (self.enfila + 1 ))]
         
 class FilaGeneral(Fila):
@@ -84,8 +84,8 @@ if __name__ == "__main__":
     for i in range (0, 60):
         dni = random.randint(1, 61)
         cliente = Cliente(dni)
-        print("$$$$$$$$$$", fila_preferencial_1.enfila)
-        print("oooooooooo", i)
+        #print("$$$$$$$$$$", fila_preferencial_1.enfila)
+        #print("oooooooooo", i)
 
         if (dni % 5 == 0):
             cliente.modificarcategoria("Preferencial")
@@ -113,10 +113,10 @@ if __name__ == "__main__":
         print(fila_preferencial_1.fila[i].dni, fila_preferencial_1.fila[i].categoria)
         i += 1
 
-    """i = 0
+    i = 0
     while (i < fila_injusta.enfila):
         print(fila_injusta.fila[i].dni, fila_injusta.fila[i].categoria)
-        i += 1"""
+        i += 1
 
 
     """Defino un máximo de clientes posibles en la fila_preferencial_1 y creo el objeto
